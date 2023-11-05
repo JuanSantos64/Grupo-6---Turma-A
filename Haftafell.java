@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Haftafell {
         /**
-         * Gera uma classe que randomiza algum número
+         * Gera um randomizador
          */
     static Random Random = new Random();
     /**
@@ -27,15 +27,7 @@ public class Haftafell {
      * @param args 
      */
     public static void main(String[] args) {
-        String nome;
-        int vidaCriatura = 50;
-        int vidaPersonagem = 50;
-        int vidaBoss = 100;
-        int healthPotion = 3;
-        int healthPotionEnemy = 3;
-        int danoPersonagem = Random.nextInt(24);
-        int danoInimigo = Random.nextInt(24);
-        menu();
+        menu(); // Começa a rodar o jogo a partir do menu!
     }
 /**
  * Classe que contêm o primeiro capitulo do jogo
@@ -117,26 +109,8 @@ public class Haftafell {
      */
     static void combatePersonagem() { //Decisões do turno do personagem
         int decisao = Random.nextInt(5);
-        int danoPersonagem = Random.nextInt(24);
-        int danoInimigo = Random.nextInt(24);
-        switch (danoPersonagem) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-            case 11:
-            case 12:
-            case 13:
-                danoPersonagem = 13;
-                break;
-        }
+        
+        
         System.out.println("== Seu turno ==");
         System.out.println("1 - Golpear");
         System.out.println("2 - Curar");
@@ -146,7 +120,7 @@ public class Haftafell {
         switch (escolha) {
             case 1 -> {
                 System.out.println("Voce escolheu golpear");
-                ataquePersonagem();
+                ataquePersonagem(danoPersonagem());
             }
             case 2 ->{
                 System.out.println("Voce escolheu curar");
@@ -158,36 +132,23 @@ public class Haftafell {
         }
         
     }
+    static int danoPersonagem(){
+        int danoPersonagem = Random.nextInt(13, 24);
+        return danoPersonagem;
+    }
+    static int danoInimigo(){
+        int danoInimigo = Random.nextInt(13, 24);
+        return danoInimigo;
+    }
     /**
      * Classe que gera o turno do oponente, com uma randomização nas ações do inimigo (bot)
      */
     static void combateInimigo() { //Randomificação das decisões do inimigo
-        
-        int decisao = Random.nextInt(5);
-        int danoPersonagem = Random.nextInt(24);
-        int danoInimigo = Random.nextInt(24);
-        switch (danoInimigo) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-            case 11:
-            case 12:
-            case 13:
-                danoInimigo = 13;
-                break;
-        }
-        switch (decisao) {
+        int decisao = Random.nextInt(5);//Randomificação das decisões do inimigo, escolhe um número de 0 a 4
+        switch (decisao) {//Randomificação das decisões do inimigo
             case 0,1, 3 -> {
                 System.out.println("O inimigo escolheu golpear");
-                ataqueMiniBoss();
+                ataqueMiniBoss(danoInimigo());
             }
             case 2, 4-> {
                 System.out.println("O inimigo escolheu curar");
@@ -223,11 +184,11 @@ public class Haftafell {
     /**
      * Classe que roda após o usuário escolher a opção Golpear. Ela gera uma pergunta que o aliado deve responder corretamente para dar um dano aleatorio maior que 13 e menor que 24.
      */
-    static void ataquePersonagem() {
-      int danoPersonagem = Random.nextInt(24);
-        int danoInimigo = Random.nextInt(24);
+    static void ataquePersonagem(int a) {
+      
+       
         int vidaCriatura = 50;
-        int vidaPersonagem = 50;
+        
         ArrayList<String> perguntas = new ArrayList<>();
         for (int i = 1; i <= 20; i ++) {
             perguntas.add("Quanto é " + i + " + " + i + "?");
@@ -245,7 +206,7 @@ public class Haftafell {
         double num = entrada.nextDouble(); 
         if (respostas.get(numPergunta) == num) {
         System.out.println("Resposta correta, você atacou o inimigo");
-        vidaCriatura = vidaCriatura - danoPersonagem;
+        vidaCriatura = vidaCriatura - a;
         if (vidaCriatura <= 0)
             vidaCriatura = 0;
         else 
@@ -257,9 +218,9 @@ public class Haftafell {
 /**
  * Classe que roda se o bot randomizaar a opção Golpear, ela gera uma pergunta para o usuário que deve responde-la corretamente para que ele desvie do ataque, se errar a pergunta, ele toma o dano inteiro.
  */
-    static void ataqueMiniBoss() { //Execucao da ação do inimigo Golpear
+    static void ataqueMiniBoss(int a) { //Execucao da ação do inimigo Golpear
         int vidaPersonagem = 50;
-        int danoInimigo = Random.nextInt(24);
+        
         ArrayList<String> perguntas = new ArrayList<>(); // Array de perguntas do inimigo
         for (int i = 1; i <= 20; i ++) {
             perguntas.add("Quanto é " + i + " + " + i + "?");
@@ -281,7 +242,7 @@ public class Haftafell {
         System.out.println("Resposta correta, você desviou do golpe do inimigo");
         else {
         System.out.println("Resposta Incorreta, a resposta correta é " + respostas.get(numPergunta ) + " você tomou o dano inteiro do inimigo");
-        vidaPersonagem= vidaPersonagem - danoInimigo;       
+        vidaPersonagem= vidaPersonagem - a;       
         System.out.format("Sua vida atual é %d\n", vidaPersonagem);
 }
     }
@@ -319,8 +280,7 @@ public class Haftafell {
     static void combate() {
         int vidaCriatura = 50;
         int vidaPersonagem = 50;
-        int danoPersonagem = Random.nextInt(24);
-        int danoInimigo = Random.nextInt(24);
+        
         while ((vidaCriatura >0 || vidaPersonagem >0)){
             combatePersonagem();
             if (vidaCriatura <=0 || vidaPersonagem <= 0) 
@@ -337,10 +297,10 @@ public class Haftafell {
      * Classe que ocorre após o usuario escolher Curar no seu turno, ela tem 3 poções que acabam.
      */
     static void curarPersonagem(){
-        int vidaCriatura = 50;
+        
         int vidaPersonagem = 50;
         int healthPotion = 3;
-        int healthPotionEnemy = 3;
+        
         if (healthPotion == 0 || healthPotion < 0) {
                     System.out.println("Voce nao tem mais pocoes disponiveis, se fudeu");
                 } else {
@@ -356,8 +316,7 @@ public class Haftafell {
     static void curarInimigo(){
         
         int vidaCriatura = 50;
-        int vidaPersonagem = 50;
-        int healthPotion = 3;
+        
         int healthPotionEnemy = 3;
         if (healthPotionEnemy == 0 || healthPotionEnemy < 0) {
                     System.out.println("O inimigo não tem mais poções");
