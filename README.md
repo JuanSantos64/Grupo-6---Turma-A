@@ -10,7 +10,7 @@ Nesse jogo, vc acompanhará uma narrativa em um mundo imersivo atravez de batalh
 
 Nosso jogo se passa na incrivel cidade de Haftafell, onde a matematica evoluiu a tal ponto de poder controlar tudo ao redor do mundo, embarque nessa aventura para poder desvendar os misterios desse mundo e enfrentar a Ordem Oculta, organização que quer roubar todo o poder da matematica dada pelos deuses antigos toda para si.
 
-[Acompanhe a historia completa aqui!](https://github.com/JuanSantos64/Grupo-6---Turma-A/tree/historiaRPG)
+[Acompanhe a historia completa aqui!](https://github.com/JuanSantos64/Grupo-6---Turma-A/tree/HistóriaRPG)
 
 Agradecimento aos excepcionais profissionais [Cleiton Fiuza](https://www.linkedin.com/in/cleiton-fiuza-souza-42a553193/) e [Henrique Leal](https://www.linkedin.com/in/henrique-leal-28733b1b5/) pelo desenvolvimento dessa excelente e envolvente historia.
 
