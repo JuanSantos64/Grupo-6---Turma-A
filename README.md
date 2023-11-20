@@ -1,4 +1,4 @@
-Perguntas Fáceis:
+Perguntas fáceis:
 1) 35 estudantes estrangeiros vieram ao Brasil. 16 visitaram Manaus; 16, S. Paulo e 11, Salvador. Desses estudantes, 5 visitaram Manaus e Salvador e, desses 5, 3 visitaram também São Paulo. O número de estudantes que visitaram Manaus ou São Paulo foi:
 
 A) 29.
