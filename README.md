@@ -1,5 +1,6 @@
-Modelagem das perguntas --> Caike
-Escolha --> Cleiton
+Modelagem das perguntas --> Caike.
+
+Escolha --> Cleiton.
 
 
 Perguntas fáceis:
