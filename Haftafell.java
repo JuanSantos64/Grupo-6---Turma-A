@@ -134,12 +134,13 @@ public class Haftafell {
         System.out.println("Após abrir o pergaminho você é teletransportado e se encontra diante da imponente cidade de Midland, uma simples cidade, mas interessante.\nAs ruas movimentadas exalam uma atmosfera agitada, o doce aroma das comidas sendo feitas pelos mercadores te encanta e te faz perder o foco, mas você logo volta a seu caminho. \nO pergaminho aponta para a cidade, você precisa encontrar mais pistas.");
         enter(entrada);
         System.out.println("Tome uma decisão");
-        System.out.println("Visitar a Biblioteca de Midland: Procurar por textos antigos ou sábios que possam indicar a localização da Runa.");
-        System.out.println("Conversar com os Habitantes Locais: Buscar informações de boatos ou lendas relacionadas à Matemática Divina.");
+        System.out.println(yellow+"Visitar a Biblioteca de Midland: Procurar por textos antigos ou sábios que possam indicar a localização da Runa."+fim);
+        System.out.println("");
+        System.out.println(yellow+"Conversar com os Habitantes Locais: Buscar informações de boatos ou lendas relacionadas à Matemática Divina."+fim);
         enter(entrada);
         System.out.println("Escolha seu caminho digitando o número correspondente.");
-        System.out.println("1 - Cena 1");
-        System.out.println("2 - Cena 2");
+        System.out.println(yellow+"1 - Cena 1: Explorar a Praça Central"+fim);
+        System.out.println(yellow+"2 - Cena 2: Conversar com os habitantes locais."+fim);
         int escolha = entrada.nextInt();
         switch(escolha){
             case 1 -> {
@@ -196,6 +197,70 @@ public class Haftafell {
                 historiaCapitulo2();
             }
         }
+        System.out.println("A terra começa a tremer, um guardiã que estava debaixo do solo, aparece levantando a árvore que está nas suas costas, seu corpo é me rochoso, está coberto de musgo…");
+        enter(entrada);
+        System.out.println("O guardião está desnorteado, ele ataca tudo em sua frente, inclusive você…");
+        enter(entrada);
+        System.out.println("Em seu corpo, existe uma parte tomada pela escuridão, o grupo da Entidade Sombria estava tentando fazendo experimentos  com ele…");
+        enter(entrada);
+        System.out.println("Ele está em agonia, a natureza da Matemática foi mexida…");
+        enter(entrada);
+        System.out.println("O guardião cai no chão…");
+        enter(entrada);
+        System.out.println("A luz que você viu saindo da árvore se transformou em um espírito, ele tem uma pequena luz amarela e um formato engraçado.");
+        enter(entrada);
+        System.out.println("“ Um humano? Pelos Deuses! Por quanto tempo eu dormi?Aqueles malditos, me prenderam por quanto tempo? \nDeviam ter avisado que o escolhido viria até mim?”");
+        enter(entrada);
+        System.out.println(yellow+"1 - Perguntar mais sobre o espírito"+fim);
+        System.out.println(yellow+"2 - Continuar"+fim);
+        int escolha = entrada.nextInt();
+        switch(escolha){
+            case 1 -> System.out.println("Me chamo Landvaettir, mas pode me chamar de Land! \nMe avisaram que o Escolhido viria para esse mundo, estou aqui para te guiar! \nMas primeiro vamos desvendar a Matemática!");
+            case 2 -> System.out.println("O espírito se chama Land, ele está aqui para te testar! ");
+        }
+        System.out.println(yellow+"1 - Desvendar escritas antigas!"+fim);
+        System.out.println(yellow+"2 - Derrotar um Golem"+fim);
+        escolha = entrada.nextInt();
+        switch(escolha){
+            case 1 -> {
+         System.out.println("=== Desafio ===");
+         System.out.println("Qual a teoria que diz:");
+         System.out.println("A soma dos quadrados dos catetos é igual ao quadrado da hipotenusa");
+         System.out.println("1 - Teoria de pitágoras");
+         System.out.println("2 - Teoria de platão");
+         System.out.println("3 - Teoria de aristóteles");
+         escolha = entrada.nextInt();
+         switch(escolha){
+             case 1 -> System.out.println("Parece realmente conhece sobre o nosso mundo, aqueles que estão acima do céu escolheram bem!");
+             default -> {
+                 System.out.println("Errou, você está iniciando novamente o capítulo 2: ");
+                 historiaCapitulo2();
+            }
+         }
+         System.out.println("=== Desafio ===");
+                System.out.println("Qual o nome da função da seguinte equação:");
+                System.out.println("F(x) = (1/3)^x + 69");
+                System.out.println("1 - Função Quadrática");
+                System.out.println("2 - Função Exponencial");
+                System.out.println("3 - Função Logáritma");
+                escolha = entrada.nextInt();
+                if(escolha != 2){
+                    System.out.println("Errou, você está iniciando novamente o capítulo 2: ");
+                    historiaCapitulo2();
+                }
+            }
+            case 2 -> combateFacil();
+        }
+         System.out.println("Você desbloqueou a “ Visão dos primeiros”!");
+         enter(entrada);
+         System.out.println("A Matemática tem várias camadas, para ser capaz de manipular a natureza você precisa enxerga-lá! \nIsso vai ajudar.");
+         enter(entrada);
+         System.out.println("Espírito – O primeiro humano a conseguir o olhar dos ancestrais , meus parabéns, se sinta honrada, com isso você vai enxergar o que humanos normais não conseguem.");
+         enter(entrada);
+         System.out.println("Vamos testá-la!");
+         combateMedio();
+         System.out.println("Você conseguiu a primeira Runa, ela dirá que caminho você deve seguir para em encontrar as próximas !\n" +
+"Fim do Capítulo!");
     }
     
     /**
@@ -210,6 +275,10 @@ public class Haftafell {
         System.out.println("Você responde: Calafrio?");
         System.out.println("Ancião: Sim, o da minha espinha, sempre quando digo algo interessante, cof, cof...");
         System.out.println(yellow+"Partir para a Ruína."+fim);
+        System.out.println("Chegando na ruína você encontra uma montanha de pedras, todas enfileiradas formando um arco. \nVocê se aproxima e ao tocar nela.");
+        enter(entrada);
+        System.out.println("As runas  azuis aparecem diante de você.");
+        enter(entrada);
         
                
         System.out.println("=== Desafio ===");
@@ -220,13 +289,14 @@ public class Haftafell {
         int escolhaaa = entrada.nextInt();
         switch(escolhaaa){
             case 2:
-                System.out.println("Após resolver o desafio uma luz surge em volta da árvore, formando uma espécie de globo, o tempo lá fora parece estar passando devagar...");
+                System.out.println("Isso te teleportar para um lago…");
                 break;
             default:
                 System.out.println("Você errou meu querido, estamos reiniciando o capítulo");
                 historiaCapitulo2();
                 break;
         }
+        
     }
 
     /**
