@@ -1,4 +1,6 @@
 
+# ⚠ Atenção ⚠
+Esse projeto foi feito para ser utilizado na IDE Apache NetBeans IDE 19, para melhor experiencia do projeto, utilize-o nessa IDE
 # ⚜ Haftafell - RPG
 Sejam bem vindos ao nosso RPG!
 
